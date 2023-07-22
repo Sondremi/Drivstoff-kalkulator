@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <title> Drivstoff Kalkulator</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="Layout.css">
+    </head>
+    <body>
+        <div id="ramme">
+
+            <div id="topp">
+                <h1>Drivstoff Kalkulator</h1>
+                <h3>For å regne ut drivstoffprisen for turen trenger kalkulatoren litt informasjon</h3>
+            </div>
+            
+            <div id="hoved">
+                <div id="boks">
+                    <label">Hvor mange L/km drivstoff bruker kjøretøyet?
+                        <input id="lkm" type="number">
+                    </label>
+                </div>
+                
+                <div id="boks">
+                    <label>Hva er prisen per liter for drivstoff?
+                        <input id="pris" type="number">
+                    </label>
+                </div>
+                
+                <div id="boks">
+                    <label>Hvor mange lang var turen? (km)
+                        <input id="km" type="number">
+                    </label>
+                </div>
+                
+                <button id="button"> Beregn </button>
+
+                <p id="svar"></p>
+            </div>
+        </div>
+
+        <script>
+            let buttonEl = document.querySelector("#button")
+            let svarEl = document.querySelector("#svar")
+
+            buttonEl.addEventListener("click", beregn)
+
+            function beregn() {
+                let lkmEl = document.querySelector("#lkm")
+                let prisEl = document.querySelector("#pris")
+                let kmEl = document.querySelector("#km")
+
+                if (lkmEl.value === "" || prisEl.value === "" || kmEl.value === "") {
+                    svarEl.innerHTML = "Vennligst fyll ut alle felt"
+                } else {  
+                    let liter1km = (lkmEl.value / 100)
+                    let pris1km = (liter1km * prisEl.value)
+                    let sum = (pris1km * kmEl.value).toFixed(2)
+
+                    svarEl.innerHTML = "Prisen for turen ble " + sum + "kr"
+                }
+            }
+        </script>
+    </body>
+</html>

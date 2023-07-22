@@ -1,0 +1,30 @@
+body {
+    background-color: #f5f5f5;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#ramme {
+    width: 80%;
+    margin: auto;
+    padding: 40px;
+    background-color: white;
+    border: 1px solid #cccccc;
+}
+
+#hoved {
+    margin: 20px;
+}
+
+#boks {
+    padding-top: 15px;
+}
+button {
+    background-color: rgba(0, 140, 255, 0.692);
+    font-size: large;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+input {
+    padding: 3px;
+}
